@@ -1,4 +1,4 @@
-# 🌱 Análisis Geoestadístico de Energías Renovables y Comunidades Indígenas en Córdoba, Argentina
+## 🌱 Análisis Geoestadístico de Energías Renovables y Comunidades Indígenas en Córdoba, Argentina
 
 **Trabajo Final — Módulo 5: Geoestadística**  
 Autora: Silvia Prevettoni · Año: 2025
@@ -76,19 +76,21 @@ install.packages(c(
   "spatstat", "ggpubr", "leaflet", "knitr", "rmarkdown"
 ))
 ```
+> ⚠️ spatstat requiere además spatstat.data, spatstat.geom, spatstat.explore, etc. (se instalan automáticamente como dependencias).
 
 ## 📁 Estructura del repositorio
 
 ```
-├── Trabajo-Final-Modulo-5.html                      # Reporte HTML (GitHub Pages)
-├── trabajo Final Modulo 5.Rmd       # Documento fuente R Markdown
+├── index.html                        # Redirige al reporte (GitHub Pages)
+├── Trabajo-Final-Modulo-5.html       # Reporte HTML
+├── Trabajo-Final-Modulo-5.rmd        # Documento fuente R Markdown
 ├── README.md
 ├── .gitignore
 ├── LICENSE
 ├── data/
 │   ├── centrales-... .shp / .dbf / .shx / .prj
 │   └── Comunidades indígenas, 202102 - Córdoba.csv
-└── img/                            # Gráficos exportados (opcional)
+└── img/                              # Gráficos exportados (opcional)
 ```
 
 ## ▶️ Cómo visualizar el proyecto
@@ -97,9 +99,9 @@ install.packages(c(
    ```bash
    git clone https://github.com/Siguax/geoestadistica-energias-renovables-cordoba.git
    ```
-2. Abrí el archivo **`Trabajo-Final-Modulo-5.html`** en cualquier navegador web (Chrome, Firefox, Edge).
+2. Abrí el archivo **`index.html`** (o `Trabajo-Final-Modulo-5.html`) en cualquier navegador web (Chrome, Firefox, Edge).
    - No necesitás instalar R para ver los resultados.
-3. Si querés reproducir el análisis, abrí el archivo `.Rmd` en RStudio y ejecutá **Knit**.
+3. Si querés reproducir el análisis, abrí el archivo **`Trabajo-Final-Modulo-5.rmd`** en RStudio y ejecutá **Knit**.
 
 ## 🌐 Ver el reporte en línea
 
