@@ -80,7 +80,7 @@ install.packages(c(
 ## 📁 Estructura del repositorio
 
 ```
-├── Trabajo-Final-Modulo-5.html      # Reporte HTML (GitHub Pages)
+├── Trabajo-Final-Modulo-5.html                      # Reporte HTML (GitHub Pages)
 ├── trabajo Final Modulo 5.Rmd       # Documento fuente R Markdown
 ├── README.md
 ├── .gitignore
