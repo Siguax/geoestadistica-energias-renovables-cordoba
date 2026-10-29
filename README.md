@@ -81,8 +81,7 @@ install.packages(c(
 
 ```
 ├── Trabajo-Final-Modulo-5.html                      # Reporte HTML (GitHub Pages)
-├── trabajo_final_modulo5.Rmd       # Documento fuente R Markdown
-├── trabajo_final_modulo5.pdf       # Versión PDF
+├── trabajo Final Modulo 5.Rmd       # Documento fuente R Markdown
 ├── README.md
 ├── .gitignore
 ├── LICENSE
