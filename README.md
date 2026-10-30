@@ -122,7 +122,7 @@ install.packages(c(
 - INAI (2021). *Listado oficial de comunidades indígenas*. Ministerio de Justicia y DDHH.
 
 ## 📄 Licencia
-Este proyecto se distribuye bajo la licencia MIT. Ver LICENSE para más detalles.
+Distribuido bajo la licencia **MIT**. Consultá [`LICENSE`](LICENSE) para más detalles.
 
 ## ✉️ Contacto
 **Silvia Prevettoni**
