@@ -1,22 +1,16 @@
-## 🌱 Análisis Geoestadístico de Energías Renovables y Comunidades Indígenas en Córdoba, Argentina
+# 🌱 Análisis Geoestadístico de Energías Renovables y Comunidades Indígenas en Córdoba, Argentina
+> Análisis de patrones espaciales aplicado a la planificación territorial y la evaluación de impacto socioambiental
 
-**Trabajo Final — Módulo 5: Geoestadística**  
-Autora: Silvia Prevettoni · Año: 2025
+## 📌 Problema de negocio
+La provincia de Córdoba concentra una cantidad creciente de proyectos de energía renovable (solar, eólica, biogás, biomasa, hidrógeno verde). Al mismo tiempo, en su territorio habitan comunidades indígenas registradas oficialmente. La pregunta que guía este análisis es concreta: ¿la distribución de los proyectos energéticos es aleatoria o responde a un patrón espacial? Y, más importante aún, ¿existe una asociación espacial significativa entre esos proyectos y las comunidades indígenas?
 
-## 📋 Descripción
-
-Este proyecto analiza el **patrón espacial de los centros y proyectos de generación de energía renovable** en la provincia de Córdoba (Argentina), y evalúa su **interacción espacial con las comunidades indígenas** registradas oficialmente.
-
-El análisis se aborda desde la perspectiva de **patrones de puntos**, combinando:
-
-- Propiedades de **primer orden**: intensidad, densidad (kernel) y homogeneidad espacial.
-- Propiedades de **segundo orden**: funciones K, L, G, F y J de Ripley, y funciones K cruzadas entre patrones marcados.
+Responder estas preguntas permite a organismos de planificación territorial, autoridades ambientales y comunidades identificar si la infraestructura energética se está desarrollando de forma concentrada en territorios con presencia indígena, insumo directo para evaluaciones de impacto socioambiental, procesos de consulta previa y políticas de ordenamiento territorial.
 
 ## 🎯 Objetivos
 
 1. Caracterizar la configuración espacial de los proyectos y obras de energía renovable en Córdoba.
 2. Evaluar si su distribución responde a un proceso de **Aleatoriedad Espacial Completa (CSR)** o presenta agrupamiento/dispersión a distintas escalas.
-3. Analizar la **correlación espacial** entre los proyectos energéticos y las comunidades indígenas.
+3. Analizar la correlación espacial entre los proyectos energéticos y las comunidades indígenas, identificando si existe asociación significativa.
 
 ## 🗂️ Fuentes de datos
 
@@ -29,6 +23,16 @@ El análisis se aborda desde la perspectiva de **patrones de puntos**, combinand
 - La base de comunidades se encontraba en formato **DMS** y fue convertida a grados decimales mediante una función personalizada.
 
 Tecnologías consideradas: Biogás, Biomasa, Biomasa de Residuos Sólidos (BRS), Eólica, Eólica con Almacenamiento, Hidrógeno Verde (HI), Pequeño Aprovechamiento Hidroeléctrico (PAH), Solar y Solar con Almacenamiento.
+
+## 🛠️ Stack tecnológico
+- R · sf · spatstat · spdep · tidyverse · dplyr · tmap · nngeo · ggmap · ggplot2 · osmdata · leaflet · units · R Markdown
+- Análisis espacial vectorial: sf para manipulación de geometrías, reproyección y recorte espacial.
+- Geoestadística de patrones de puntos: spatstat para análisis de primer y segundo orden (K, L, G, F, J, K cruzada, K multimarca).
+- Dependencias espaciales: spdep para autocorrelación espacial; nngeo para vecinos más cercanos.
+- Visualización: tmap y ggplot2 para mapas estáticos; leaflet para mapas interactivos.
+- Reproducibilidad: R Markdown con salida en HTML, análisis documentado de punta a punta.
+
+## 💡 El reporte incluye mapas interactivos y gráficos de funciones K, L, G, F y J con envelopes de simulación de Monte Carlo para evaluar la significancia estadística.
 
 ## 🧪 Enfoque metodológico
 
@@ -54,13 +58,29 @@ Tecnologías consideradas: Biogás, Biomasa, Biomasa de Residuos Sólidos (BRS),
 - **Función K cruzada** entre comunidades indígenas y proyectos energéticos.
 - **K multimarca** (`alltypes`) para explorar todas las combinaciones.
 
-## 📊 Resultados principales
+## 📊 Principales hallazgos
 
 - **Intensidad global:** ~0.000139 proyectos/km² → patrón **homogéneo**.
 - **Test de cuadrantes (Monte Carlo):** p-value > 0.05 → **no se rechaza CSR** (Proceso de Poisson homogéneo).
 - **Función K / L:** agrupamiento a **distancias cortas** (recursos e infraestructura compartida) y **dispersión a distancias largas** (evitar saturación regional).
 - **Función G:** confirma agregación significativa (vecinos más cercanos de lo esperado por azar).
 - **Función K cruzada (comunidades ↔ energía):** la curva observada (Kiso) se ubica **por encima de la línea de Poisson** → **asociación espacial significativa** entre comunidades y proyectos energéticos.
+
+## 💡 Impacto y recomendaciones
+
+- Evaluación de impacto socioambiental: la asociación espacial significativa entre proyectos energéticos y comunidades indígenas es un insumo directo para procesos de consulta previa, evaluación de impacto ambiental y diseño de medidas de mitigación.
+- Ordenamiento territorial: los patrones de agrupamiento a corta distancia y dispersión a larga distancia sugieren una lógica de localización que puede orientar políticas de planificación energética.
+- Replicabilidad: la metodología es replicable a otras provincias, otras tecnologías y otros tipos de infraestructura (minería, transporte, residuos).
+- Transparencia metodológica: el análisis incluye tests estadísticos formales (Monte Carlo, envelopes) que permiten distinguir patrones reales de aleatoriedad, evitando conclusiones espurias.
+
+## 🧠 Competencias demostradas
+
+- Integración de datos geoespaciales heterogéneos: Secretaría de Energía (shapefile), INAI (CSV en DMS), reproyección y recorte espacial.
+- Geoestadística avanzada: análisis de primer y segundo orden, funciones K/L/G/F/J, K cruzada, K multimarca, simulación de Monte Carlo.
+- Interpretación estadística: evaluación de CSR, identificación de agrupamiento/dispersión, asociación espacial entre patrones.
+- Visualización: mapas estáticos e interactivos, gráficos de funciones con envelopes.
+- Reproducibilidad: análisis documentado en R Markdown, con código y datos disponibles.
+- Traducción de resultados a recomendaciones: de hallazgos estadísticos a insumos para planificación territorial y evaluación de impacto.
 
 ## 🧰 Requisitos
 
@@ -92,22 +112,21 @@ install.packages(c(
 │   └── Comunidades indígenas, 202102 - Córdoba.csv
 └── img/                              # Gráficos exportados (opcional)
 ```
+## ▶️ Ver el análisis completo
 
-## ▶️ Cómo visualizar el proyecto
+👉 [https://siguax.github.io/geoestadistica-energias-renovables-cordoba/](https://siguax.github.io/geoestadistica-energias-renovables-cordoba/)
+
+## ▶️ Cómo reproducir el análisis
 
 1. Descargá o cloná este repositorio:
    ```bash
    git clone https://github.com/Siguax/geoestadistica-energias-renovables-cordoba.git
    ```
-2. Abrí el archivo **`index.html`** (o `Trabajo-Final-Modulo-5.html`) en cualquier navegador web (Chrome, Firefox, Edge).
-   - No necesitás instalar R para ver los resultados.
-3. Si querés reproducir el análisis, abrí el archivo **`Trabajo-Final-Modulo-5.rmd`** en RStudio y ejecutá **Knit**.
+2. Para ver los resultados: abrí  **`index.html`** (o `Trabajo-Final-Modulo-5.html`) en cualquier navegador web (Chrome, Firefox, Edge).
+   No necesitás instalar R.
+3. Para reproducir el análisis, abrí **`Trabajo-Final-Modulo-5.rmd`** en RStudio y ejecutá **Knit**.
 
-## 🌐 Ver el reporte en línea
-
-👉 [https://siguax.github.io/geoestadistica-energias-renovables-cordoba/](https://siguax.github.io/geoestadistica-energias-renovables-cordoba/)
-
-## 📝 Notas
+## 📝 Notas metodológicas
 
 - Los puntos duplicados se resolvieron con `rjitter()` (radio = 2 m, semilla 200) para garantizar la validez del patrón de puntos.
 - La ventana de observación (`owin`) se construyó a partir del polígono provincial reproyectado, con unidades en metros.
@@ -124,7 +143,7 @@ install.packages(c(
 ## 📄 Licencia
 Distribuido bajo la licencia **MIT**. Consultá [`LICENSE`](LICENSE) para más detalles.
 
-## ✉️ Contacto
+## ✉️ Autora
 **Silvia Prevettoni**
 
 - 🐙 GitHub: [@Siguax](https://github.com/Siguax)
